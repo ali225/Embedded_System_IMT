@@ -1,0 +1,67 @@
+#include "type.h"
+#include "DIO.H"
+#include "LCD_cfg.h"
+#define  F_CPU 8000000UL
+#include <avr/delay.h>
+
+void LCD_vidWriteCharacter(u8  data)
+{
+	DIO_vidSetPortValue (LCD_port , data );
+	DIO_vidSetPinValue (LCD_control , RS , 1);
+	DIO_vidSetPinValue (LCD_control , RW , 0);
+	DIO_vidSetPinValue (LCD_control , E , 1);
+	_delay_ms(1);
+	DIO_vidSetPinValue (LCD_control , E , 0);
+	_delay_ms(2);
+
+}
+
+void LCD_vidWriteCommand(u8  data)
+{
+	DIO_vidSetPortValue (LCD_port , data );
+	DIO_vidSetPinValue (LCD_control , RS , 0);
+	DIO_vidSetPinValue (LCD_control , RW , 0);
+	DIO_vidSetPinValue (LCD_control , E , 1);
+	_delay_ms(1);
+	DIO_vidSetPinValue (LCD_control , E , 0);
+	_delay_ms(2);
+
+}
+
+void LCD_vidInit(void)
+{
+	DIO_vidSetPortDirection (LCD_port , 0xff );
+	DIO_vidSetPinDirection (LCD_control , RS , 1 );
+	DIO_vidSetPinDirection (LCD_control , RW , 1 );
+	DIO_vidSetPinDirection (LCD_control  , E  , 1 );
+	_delay_ms(50);
+	LCD_vidWriteCommand(0b00111000);
+	_delay_ms(1);
+	LCD_vidWriteCommand(0b00001100);
+	_delay_ms(1);
+	LCD_vidWriteCommand(0b00000001);
+	_delay_ms(1);
+}
+
+
+void LCD_vidWriteString (u8 * arr)
+{
+	u8 i=0;
+	while (arr[i] != '\0')
+	{
+		LCD_vidWriteCharacter (arr[i]);
+		i++;
+	}
+}
+
+void LCD_vidSetPosition( u8 row , u8 col )
+{
+	if (row == 1)
+	{
+		LCD_vidWriteCommand (128 + col);
+	}
+	else if (row == 2)
+	{
+		LCD_vidWriteCommand(128+64+ col);
+	}
+}

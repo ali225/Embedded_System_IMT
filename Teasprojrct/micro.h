@@ -1,0 +1,5 @@
+
+#define Set_Bit(var,BitNO) (var|=(1<<BitNO))
+#define Clr_Bit(var,BitNO) (var&=(~(1<<BitNO)))
+#define Tog_Bit(var,BitNO) (var^=(1<<BitNO))
+#define get_bit(var,BitNO)(var=(var&(1<<bitno))>>bitno)

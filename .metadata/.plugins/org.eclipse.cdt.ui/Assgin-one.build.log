@@ -1,0 +1,40 @@
+19:37:51 **** Incremental Build of configuration Release for project Assgin-one ****
+make all 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Assgin-one.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Assgin-one.hex"
+avrdude: input file Assgin-one.hex auto detected as Intel Hex
+avrdude: writing flash (504 bytes):
+
+Writing | ################################################## | 100% 0.34s
+
+avrdude: 504 bytes of flash written
+avrdude: verifying flash memory against Assgin-one.hex:
+avrdude: load data flash data from input file Assgin-one.hex:
+avrdude: input file Assgin-one.hex auto detected as Intel Hex
+avrdude: input file Assgin-one.hex contains 504 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 0.25s
+
+avrdude: verifying ...
+avrdude: 504 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+
+19:37:52 Build Finished (took 1s.185ms)
+

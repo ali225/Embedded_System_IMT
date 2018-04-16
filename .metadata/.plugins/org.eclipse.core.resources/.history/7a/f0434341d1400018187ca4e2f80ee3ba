@@ -1,0 +1,18 @@
+/*
+ * LCD_cfg.h
+ *
+ *  Created on: Apr 13, 2018
+ *      Author: sheco
+ */
+
+#ifndef LCD_CFG_H_
+#define LCD_CFG_H_
+#define LCD_port 0
+#define LCD_control 2
+#define RS 0
+#define RW 1
+#define E  2
+
+
+
+#endif

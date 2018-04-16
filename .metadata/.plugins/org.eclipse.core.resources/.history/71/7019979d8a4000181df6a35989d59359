@@ -1,0 +1,28 @@
+/*
+ * main.c
+ *
+ *  Created on: 24 Mar 2018
+ *      Author: Sherief M. hussien
+ */
+#include <avr/delay.h>
+#include "type.h"
+#include "resorces.h"
+#include "DIO.H"
+#include "macros.h"
+#include "LCD.h"
+#define  F_CPU 8000000UL
+
+
+void main()
+{
+	LCD_vidInit();
+	LCD_vidSetPosition( 1 , 0 );
+	u8 arr[] = "sscccdd";
+	LCD_vidWriteString (arr);
+	LCD_vidSetPosition( 2 , 0 );
+	u8 dee[] = "jsfbbbff ";
+	LCD_vidWriteString (dee);
+}
+
+
+

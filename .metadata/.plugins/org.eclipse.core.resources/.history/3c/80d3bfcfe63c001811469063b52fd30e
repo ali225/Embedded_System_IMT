@@ -1,0 +1,44 @@
+#include "types.h"
+#include "Register.h"
+
+
+void DIO_vid_SetPortDirection(u8 port ,u8 Value)
+{ 
+		Switch(port)
+		{
+				Case '0':
+				DDRA = Value;
+				break;
+				Case '1':
+				DDRA = Value;
+				break;
+				Case '2':
+				DDRA = Value;
+				break;
+				Case '3':
+				DDRA = Value;
+				break;
+				
+		}
+		
+void DIO_vid_SetPortValue(u8 port ,u8 Value)
+{ 
+		Switch(port)
+		{
+				Case '0':
+				PORTA = Value;
+				break;
+				Case '1':
+				PORTA = Value;
+				break;
+				Case '2':
+				PORTA = Value;
+				break;
+				Case '3':
+				PORTA = Value;
+				break;
+				
+		}
+ 
+	
+	}

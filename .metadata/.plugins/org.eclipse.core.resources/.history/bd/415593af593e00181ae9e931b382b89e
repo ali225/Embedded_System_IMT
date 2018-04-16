@@ -1,0 +1,7 @@
+
+
+void DIO_vidSetPortDirerection (u8 Port , u8 value);
+void DIO_vidSetPortValue (u8 Port , u8 value);
+void DIO_vidSetPinValue (u8 Port , u8 Pin, u8 value);
+void DIO_vidSetPinDirerection (u8 Port , u8 Pin , u8 value);
+u8 DIO_u8ReadPortValue(u8 Port);

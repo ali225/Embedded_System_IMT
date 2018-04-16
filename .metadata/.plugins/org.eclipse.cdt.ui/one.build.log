@@ -1,0 +1,40 @@
+21:47:48 **** Incremental Build of configuration Debug for project one ****
+make all 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:one.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "one.hex"
+avrdude: input file one.hex auto detected as Intel Hex
+avrdude: writing flash (1014 bytes):
+
+Writing | ################################################## | 100% 0.65s
+
+avrdude: 1014 bytes of flash written
+avrdude: verifying flash memory against one.hex:
+avrdude: load data flash data from input file one.hex:
+avrdude: input file one.hex auto detected as Intel Hex
+avrdude: input file one.hex contains 1014 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 0.52s
+
+avrdude: verifying ...
+avrdude: 1014 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+
+21:47:49 Build Finished (took 1s.792ms)
+

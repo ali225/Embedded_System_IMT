@@ -1,0 +1,20 @@
+20:29:09 **** Incremental Build of configuration Release for project Teasprojrct ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Teasprojrct.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     122 bytes (0.4% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+20:29:10 Build Finished (took 547ms)
+

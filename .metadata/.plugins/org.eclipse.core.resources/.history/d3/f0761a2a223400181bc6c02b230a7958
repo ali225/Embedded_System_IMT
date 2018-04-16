@@ -1,0 +1,18 @@
+/*
+ * main.c
+ *
+ *  Created on: Mar 24, 2018
+ *      Author: My
+ */
+#include "types.h"
+#define DDRA *((volutilp u8*)OX3A)
+#define portA *((volutilp u8*)OX38)
+#define pinA *((volutilp u8*)OX39)
+
+void main(void)
+{
+
+   DDRA = 255;
+   portA =255;
+
+}

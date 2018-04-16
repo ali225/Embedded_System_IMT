@@ -1,0 +1,145 @@
+/*
+ * DIO.c
+ *
+ *  Created on: 31 Mar 2018
+ *      Author: Sherief M. hussien
+ */
+#include "type.h"
+#include "resorces.h"
+#include "macros.h"
+void DIO_vidSetPortDirection (u8 port , u8 value )
+{
+	switch (port)
+	{
+	case 0 :
+		DDRA=value;
+		break;
+	case 1 :
+		DDRB=value;
+		break;
+	case 2 :
+		DDRC=value;
+		break;
+	case 3 :
+		DDRD=value;
+		break;
+	}
+
+}
+
+void DIO_vidSetPortValue (u8 port , u8 value )
+{
+	switch (port)
+	{
+	case 0 :
+		PORTA=value;
+		break;
+	case 1 :
+		PORTB=value;
+		break;
+	case 2 :
+		PORTC=value;
+		break;
+	case 3 :
+		PORTD=value;
+		break;
+	}
+}
+
+void DIO_vidSetPinDirection (u8 port , u8 pin , u8 value )
+{
+	switch (port)
+	{
+	case 0 :
+		if (value == 1)
+			set_bit(DDRA,pin);
+		else if (value == 0)
+			clr_bit(DDRA,pin);
+		break ;
+
+	case 1 :
+		if (value == 1)
+			set_bit(DDRB,pin);
+		else if (value == 0)
+			clr_bit(DDRB,pin);
+		break ;
+
+	case 2 :
+		if (value == 1)
+			set_bit(DDRC,pin);
+		else if (value == 0)
+			clr_bit(DDRC,pin);
+		break ;
+
+	case 3 :
+		if (value == 1)
+			set_bit(DDRD,pin);
+		else if (value == 0)
+			clr_bit(DDRD,pin);
+		break ;
+
+	}
+}
+
+void DIO_vidSetPinValue (u8 port , u8 pin , u8 value )
+{
+	switch (port)
+	{
+	case 0 :
+		if (value == 1)
+			set_bit(PORTA,pin);
+		else if (value == 0)
+			clr_bit(PORTA,pin);
+		break ;
+
+	case 1 :
+		if (value == 1)
+			set_bit(PORTB,pin);
+		else if (value == 0)
+			clr_bit(PORTB,pin);
+		break ;
+
+	case 2 :
+		if (value == 1)
+			set_bit(PORTC,pin);
+		else if (value == 0)
+			clr_bit(PORTC,pin);
+		break ;
+
+	case 3 :
+		if (value == 1)
+			set_bit(PORTD,pin);
+		else if (value == 0)
+			clr_bit(PORTD,pin);
+		break ;
+
+	}
+}
+
+u8 DIO_u8ReadPortValue(u8  port)
+{
+	u8 value;
+	switch (port)
+	{
+	case 0 :
+		value =PINA;
+		break;
+	case 1 :
+		value =PINB;
+		break;
+	case 2 :
+		value =PINC;
+		break;
+	case 3 :
+		value =PIND;
+		break;
+	}
+	return value ;
+
+}
+
+
+
+
+
+

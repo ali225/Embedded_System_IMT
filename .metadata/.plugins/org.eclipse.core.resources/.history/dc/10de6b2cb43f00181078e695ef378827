@@ -1,0 +1,19 @@
+/*
+ * LCD_config.h
+ *
+ *  Created on: Apr 13, 2018
+ *      Author: My
+ */
+
+#ifndef LCD_CONFIG_H_
+#define LCD_CONFIG_H_
+
+#define LCD_PORT         		0
+#define LCD_CONTROL  			1
+#define RS 						0
+#define RW 						1
+#define E 						2
+
+
+
+#endif /* LCD_CONFIG_H_ */

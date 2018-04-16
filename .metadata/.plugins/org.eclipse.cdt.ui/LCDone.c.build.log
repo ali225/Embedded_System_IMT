@@ -1,0 +1,59 @@
+18:57:34 **** Incremental Build of configuration Debug for project LCDone.c ****
+make all 
+Building file: ../LCD_conig.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"LCD_conig.d" -MT"LCD_conig.o" -c -o "LCD_conig.o" "../LCD_conig.c"
+In file included from ../LCD_conig.c:9:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../LCD_conig.c:9:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../LCD_conig.c
+ 
+Building target: LCDone.c.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,LCDone.c.map -mmcu=atmega32 -o "LCDone.c.elf"  ./DIO.o ./LCD_conig.o ./main.o   
+Finished building target: LCDone.c.elf
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex LCDone.c.elf  "LCDone.c.hex"
+Finished building: LCDone.c.hex
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:LCDone.c.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "LCDone.c.hex"
+avrdude: input file LCDone.c.hex auto detected as Intel Hex
+avrdude: writing flash (6256 bytes):
+
+Writing | ################################################## | 100% 4.02s
+
+avrdude: 6256 bytes of flash written
+avrdude: verifying flash memory against LCDone.c.hex:
+avrdude: load data flash data from input file LCDone.c.hex:
+avrdude: input file LCDone.c.hex auto detected as Intel Hex
+avrdude: input file LCDone.c.hex contains 6256 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 3.17s
+
+avrdude: verifying ...
+avrdude: 6256 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+
+18:57:42 Build Finished (took 8s.471ms)
+

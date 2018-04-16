@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;DIO.c, DIO.h, LCD_config.h, LCD_conig.c, LCD.h, main.c, micro.h, registers.h, types.h&apos; to &apos;LCD&apos;" description="Move 9 resources to &apos;LCD&apos;" destination="/LCD" element1="/mmm/DIO.c" element2="/mmm/DIO.h" element3="/mmm/LCD_config.h" element4="/mmm/LCD_conig.c" element5="/mmm/LCD.h" element6="/mmm/main.c" element7="/mmm/micro.h" element8="/mmm/registers.h" element9="/mmm/types.h" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="9" stamp="1523690109998" updateReferences="true"/>
+</session>

@@ -1,0 +1,9 @@
+20:24:42 **** Incremental Build of configuration Debug for project Test ****
+make all 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Test.hex:a
+avrdude: error: could not find USB device "USBasp" with vid=0x16c0 pid=0x5dc
+make: *** [avrdudedummy] Error 1
+
+20:24:48 Build Finished (took 5s.313ms)
+

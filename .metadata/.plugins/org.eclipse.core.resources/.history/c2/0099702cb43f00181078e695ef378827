@@ -1,0 +1,27 @@
+/*
+ * main.c
+ *
+ *  Created on: Apr 13, 2018
+ *      Author: My
+ */
+
+#include <avr/delay.h>
+
+#include "../LCD/LCD.h"
+#include "../LCD/registers.h"
+#include "../LCD/types.h"
+
+
+void main(void)
+{
+	lcd_vidinint();
+
+	 LCD_vidwrirteChar('A');
+	 LCD_vidwrirteChar('L');
+	 LCD_vidwrirteChar('i');
+	 while(1)
+	 {
+	 }
+
+
+}

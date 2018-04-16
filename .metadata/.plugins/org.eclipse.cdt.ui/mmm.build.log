@@ -1,0 +1,33 @@
+19:19:07 **** Incremental Build of configuration Debug for project mmm ****
+make all 
+Building file: ../DIO.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"DIO.d" -MT"DIO.o" -c -o "DIO.o" "../DIO.c"
+Finished building: ../DIO.c
+ 
+Building file: ../LCD.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"LCD.d" -MT"LCD.o" -c -o "LCD.o" "../LCD.c"
+In file included from ../LCD.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../LCD.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../LCD.c
+ 
+Building target: mmm.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,mmm.map -mmcu=atmega32 -o "mmm.elf"  ./DIO.o ./LCD.o ./Main.o   
+Finished building target: mmm.elf
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex mmm.elf  "mmm.hex"
+Finished building: mmm.hex
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -u -Uflash:w:mmm.hex:a -Ulfuse:w:0xff:m -Uhfuse:w:0xd9:m
+avrdude: error: could not find USB device "USBasp" with vid=0x16c0 pid=0x5dc
+make: *** [avrdudedummy] Error 1
+
+19:19:10 Build Finished (took 3s.344ms)
+

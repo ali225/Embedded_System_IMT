@@ -1,0 +1,7 @@
+19:19:57 **** Clean-only build of configuration Debug for project LCDone ****
+make clean 
+rm -rf  LCDone.hex  ./DIO.o ./LCD_conig.o ./main.o  avrdudedummy  ./DIO.d ./LCD_conig.d ./main.d  LCDone.elf
+ 
+
+19:19:59 Build Finished (took 1s.546ms)
+

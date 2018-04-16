@@ -1,0 +1,61 @@
+/*
+ * main.c
+
+ *
+ *  Created on: Apr 1, 2018
+ *      Author: My
+ */
+#include <avr/delay.h>
+#define F_CPU 12000000UL
+#include"types.h"
+#include "Register.h"
+
+
+/*int main(void)
+{
+	uint8_t i;
+	DDRA = 0xff;
+
+	while(1)
+	{
+		for(i=0;i<=7;i++)
+		{
+
+			PORTA = (1 << i);
+			_delay_ms(1000);
+
+		}
+
+	}
+	return 0;
+}
+ */
+// the first cod sloution
+int main(void)
+{
+
+	DDRA =0b11111111; // 255
+
+	while(1)
+	{
+
+
+		PORTA =0b11111111; //0b10101010
+		_delay_ms(1000);
+		PORTA =0b10000001; //0b10101010 read
+		_delay_ms(1000);
+		PORTA =0b01000010; //0b10101010 yoleew
+		_delay_ms(1000);
+		PORTA =0b00100100; //0b10101010 grean
+		_delay_ms(1000);
+		PORTA =0b00011000; //0b10101010
+		_delay_ms(1000);
+		PORTA =0b00100100; //0b10101010
+		_delay_ms(1000);
+		PORTA =0b01000010; //0b10101010
+		_delay_ms(1000);
+		_delay_ms(1000);
+		PORTA =0b10000001; //0b10101010
+	}
+
+}

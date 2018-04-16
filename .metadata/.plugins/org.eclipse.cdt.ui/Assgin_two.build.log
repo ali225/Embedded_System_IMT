@@ -1,0 +1,54 @@
+16:40:14 **** Incremental Build of configuration Debug for project Assgin_two ****
+make all 
+Building file: ../DIO.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=12000000UL -MMD -MP -MF"DIO.d" -MT"DIO.o" -c -o "DIO.o" "../DIO.c"
+Finished building: ../DIO.c
+ 
+Building target: Assgin_two.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Assgin_two.map -mmcu=atmega32 -o "Assgin_two.elf"  ./DIO.o ./main.o   
+Finished building target: Assgin_two.elf
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Assgin_two.elf  "Assgin_two.hex"
+Finished building: Assgin_two.hex
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Assgin_two.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.02s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Assgin_two.hex"
+avrdude: input file Assgin_two.hex auto detected as Intel Hex
+avrdude: writing flash (5162 bytes):
+
+Writing | ################################################## | 100% 3.50s
+
+avrdude: 5162 bytes of flash written
+avrdude: verifying flash memory against Assgin_two.hex:
+avrdude: load data flash data from input file Assgin_two.hex:
+avrdude: input file Assgin_two.hex auto detected as Intel Hex
+avrdude: input file Assgin_two.hex contains 5162 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 2.56s
+
+avrdude: verifying ...
+avrdude: 5162 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+
+16:40:23 Build Finished (took 8s.898ms)
+
